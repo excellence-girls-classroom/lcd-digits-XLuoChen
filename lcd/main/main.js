@@ -15,6 +15,7 @@ function splitToDigits(characters) {
     
     return digits;
 }
+
 function getGridForDigit(digit,grids) {
     for(var i = 0;i < grids.length;i++){
         if(grids[i].value === parseInt(digit)){
@@ -23,6 +24,7 @@ function getGridForDigit(digit,grids) {
         }
     }
 }
+
 function buildLattices(digits,grids) {
     var lattices = [];
     digits.forEach(function (digit) {
@@ -50,6 +52,7 @@ function generateText(lattices) {
 
     return text;
 }
+
 function buildLcdDigit(lattices) {
     var lcdDigit = '';
 
