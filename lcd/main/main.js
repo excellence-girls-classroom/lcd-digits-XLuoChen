@@ -5,6 +5,7 @@ function printLcdDigits(characters) {
     var lattices = buildLattices(digits,grids);
 
     var lcdDigit = buildLcdDigit(lattices);
+
     console.log(lcdDigit);
 }
 
@@ -27,8 +28,10 @@ function getGridForDigit(digit,grids) {
 
 function buildLattices(digits,grids) {
     var lattices = [];
+
     digits.forEach(function (digit) {
         var girdForDigit = getGridForDigit(digit,grids);
+        
         lattices.push(girdForDigit);
     });
 
@@ -37,26 +40,23 @@ function buildLattices(digits,grids) {
 
 function generateText(lattices) {
     var text = '';
+    var firstText = '';
+    var secondText = '';
+    var thirdText = '';
 
     lattices.forEach(function (lattice) {
-        text += lattice.pattern.firstLine + ' ';
+        firstText += lattice.pattern.firstLine + ' ';
+        secondText += lattice.pattern.secondLine + ' ';
+        thirdText += lattice.pattern.thirdLine + ' ';
     });
-    text += '\n';
-    lattices.forEach(function (lattice) {
-        text += lattice.pattern.secondLine + ' ';
-    });
-    text += '\n';
-    lattices.forEach(function (lattice) {
-        text += lattice.pattern.thirdLine + ' ';
-    });
+    text += firstText + '\n' + secondText  + '\n' + thirdText;
 
     return text;
 }
 
 function buildLcdDigit(lattices) {
-    var lcdDigit = '';
 
-    lcdDigit = generateText(lattices);
+    var lcdDigit = generateText(lattices);
 
     return lcdDigit;
 }
