@@ -1,5 +1,5 @@
 function printLcdDigits(characters) {
-    var digits = splitToDigits(characters);
+    var digits = characters.split('');
 
     var grids = loadAllDigitsGrids();
     var lattices = buildLattices(digits,grids);
@@ -7,14 +7,6 @@ function printLcdDigits(characters) {
     var lcdDigit = buildLcdDigit(lattices);
 
     console.log(lcdDigit);
-}
-
-function splitToDigits(characters) {
-    var digits = [];
-    
-    digits = characters.split('');
-    
-    return digits;
 }
 
 function getGridForDigit(digit,grids) {
