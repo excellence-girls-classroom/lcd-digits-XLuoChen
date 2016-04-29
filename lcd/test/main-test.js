@@ -1,50 +1,3 @@
-describe('printLcdDigits()', function () {
-    var characters;
-
-    beforeEach(function () {
-        characters = '910';
-    });
-    it('it should print correct text', function () {
-        spyOn(console, 'log');
-        printLcdDigits(characters);
-        var expectResult = '._. ... ._. ' + '\n'
-                         + '|_| ..| |.| ' + '\n'
-                         + '..| ..| |_| ';
-        expect(console.log).toHaveBeenCalledWith(expectResult);
-
-    });
-});
-
-describe('splitToDigits()', function () {
-    describe('characters has only one element', function () {
-        var characters;
-
-        beforeEach(function () {
-            characters = '2';
-        });
-
-        it('it will return characters', function () {
-            var digits = splitToDigits(characters);
-
-            expect(digits).toEqual(['2']);
-        });
-    });
-
-    describe('characters has more than one element', function () {
-        var characters;
-
-        beforeEach(function () {
-            characters = '910';
-        });
-
-        it('it will return an array after been splited', function () {
-            var digits = splitToDigits(characters);
-
-            expect(digits).toEqual(['9','1','0']);
-        });
-    });
-});
-
 describe('getGridForDigit()', function () {
     var grids;
     var digit;
@@ -134,3 +87,19 @@ describe('buildLcdDigit()', function () {
     });
 });
 
+describe('printLcdDigits()', function () {
+    var characters;
+
+    beforeEach(function () {
+        characters = '910';
+    });
+    it('it should print correct text', function () {
+        spyOn(console, 'log');
+        printLcdDigits(characters);
+        var expectResult = '._. ... ._. ' + '\n'
+            + '|_| ..| |.| ' + '\n'
+            + '..| ..| |_| ';
+        expect(console.log).toHaveBeenCalledWith(expectResult);
+
+    });
+});
