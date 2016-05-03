@@ -23,7 +23,7 @@ function buildLattices(digits,grids) {
 
     digits.forEach(function (digit) {
         var girdForDigit = getGridForDigit(digit,grids);
-        
+
         lattices.push(girdForDigit);
     });
 
