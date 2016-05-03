@@ -41,7 +41,7 @@ describe('buildLattices()', function () {
             expect(lattices).toEqual(expectResult);
         });
     });
-    
+
     describe('if digits has more than one element', function () {
         beforeEach(function () {
             digits = ['9','1','0'];
@@ -80,8 +80,8 @@ describe('buildLcdDigit()', function () {
     it('it can return correct text', function () {
         var lcdDigit = buildLcdDigit(lattices);
         var expectResult = '._. ... ._. ' + '\n'
-                         + '|_| ..| |.| ' + '\n'
-                         + '..| ..| |_| ';
+            + '|_| ..| |.| ' + '\n'
+            + '..| ..| |_| ';
 
         expect(lcdDigit).toEqual(expectResult);
     });
